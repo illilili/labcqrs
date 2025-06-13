@@ -44,6 +44,13 @@ public class Delivery {
 
     //<<< Clean Arch / Port Method
     public static void addToDeliveryList(OrderPlaced orderPlaced) {
+        
+        Delivery delivery = new Delivery();
+        delivery.setAddress(orderPlaced.getAddress());
+        delivery.setQuantity(orderPlaced.getQty());
+        delivery.setCustomerId(orderPlaced.getCustomerId());
+        delivery.setOrderId(orderPlaced.getId());
+        repository().save(delivery);
         //implement business logic here:
 
         /** Example 1:  new item 
